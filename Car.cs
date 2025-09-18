@@ -11,6 +11,19 @@
         public Engine.EngineType TypeOfEngine;
         public int MaxSpeed;
 
+        public Car(string company, string color, int year, int horsepower, int gears, 
+            bool engineon, Engine.EngineType typeofengine, int maxspeed)
+        {
+            Company = company;
+            Color = color;
+            Year = year;
+            HorsePower = horsepower;
+            Gears = gears;
+            EngineOn = engineon;
+            TypeOfEngine = typeofengine;
+            MaxSpeed = maxspeed;
+        }
+
         public void ShowInfo()
         {
             Console.WriteLine($"Märke: {Company}");

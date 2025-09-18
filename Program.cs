@@ -4,23 +4,35 @@
     {
         static void Main(string[] args)
         {
-            Car myCar = new Car();
-            
-            myCar.Brand = "Tesla";
-            myCar.Color = "Black";
-            myCar.Year = 2025;
-            myCar.HorsePower = 1200;
-            myCar.Gears = 5;
-            myCar.EngineOn = true;
+            Car myFirstCar = new Car();
+            Car mySecondCar = new Car();
 
-            Console.WriteLine($"Märke: {myCar.Brand}");
-            Console.WriteLine($"Färg: {myCar.Color}");
-            Console.WriteLine($"Årsmodell: {myCar.Year}");
-            Console.WriteLine($"Hästkrafter: {myCar.HorsePower}");
-            Console.WriteLine($"Växlar: {myCar.Gears}");
-            Console.WriteLine($"Motor igång: {myCar.EngineOn}");
+            // Första bilen
+            myFirstCar.Company = "Dodge";
+            myFirstCar.Color = "Black";
+            myFirstCar.Year = 1982;
+            myFirstCar.HorsePower = 1500;
+            myFirstCar.Gears = 6;
+            myFirstCar.EngineOn = true;
+            myFirstCar.TypeOfEngine = Car.EngineType.Gasoline;
+            myFirstCar.MaxSpeed = 320;
 
+            // Andra bilen
+            mySecondCar.Company = "Volvo";
+            mySecondCar.Color = "Red";
+            mySecondCar.Year = 1987;
+            mySecondCar.HorsePower = 600;
+            mySecondCar.Gears = 5;
+            mySecondCar.EngineOn = true;
+            mySecondCar.TypeOfEngine = Car.EngineType.Diesel;
+            mySecondCar.MaxSpeed = 280;
 
+            // Kalla på metoder
+            myFirstCar.ShowInfo();
+            myFirstCar.Drive();
+
+            mySecondCar.ShowInfo();
+            mySecondCar.Drive();
         }
     }
 }

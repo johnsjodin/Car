@@ -8,7 +8,7 @@
         public int HorsePower;
         public int Gears;
         public bool EngineOn;
-        public EngineType TypeOfEngine;
+        public Engine.EngineType TypeOfEngine;
         public int MaxSpeed;
 
         public void ShowInfo()
@@ -23,20 +23,46 @@
 
         public void Drive()
         {
-            Console.WriteLine("\n\nVroom vrrroooom!!");
-        }
-
-        public enum EngineType
-        {
-            Electric,
-            Gasoline,
-            Diesel,
-            Hybrid
+            Console.WriteLine($"\nVroom vrrroooom!! {Company} susar iväg!\n");
         }
 
         public void Fuel()
         {
-            Console.WriteLine($"Bilen har en motor av typen {TypeOfEngine}.");
+            switch (TypeOfEngine)
+            {
+                case Engine.EngineType.Electric:
+                    Console.WriteLine($"{Company} laddas.");
+                    break;
+                case Engine.EngineType.Gasoline:
+                    Console.WriteLine($"{Company} tankas med bensin.");
+                    break;
+                case Engine.EngineType.Diesel:
+                    Console.WriteLine($"{Company} tankas med diesel.");
+                    break;
+                case Engine.EngineType.Hybrid:
+                    Console.WriteLine($"{Company} tankas med både bensin och el.");
+                    break;
+                default:
+                    Console.WriteLine("Okänt bränsle.");
+                    break;
+            }
+        }
+
+        public void IsFasterThan(Car otherCar)
+        {
+            if (otherCar == null) return;
+            if (this.MaxSpeed > otherCar.MaxSpeed)
+            {
+                Console.WriteLine($"{this.Company} är snabbare än {otherCar.Company}");
+            }
+            else if (this.MaxSpeed < otherCar.MaxSpeed)
+            {
+                Console.WriteLine($"{otherCar.Company} är snabbare än {this.Company}");
+            }
+            else
+            {
+                Console.WriteLine($"{this.Company} och {otherCar.Company} har samma maxhastighet");
+            }
         }
     }
 }

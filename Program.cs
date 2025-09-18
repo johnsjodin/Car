@@ -14,7 +14,7 @@
             myFirstCar.HorsePower = 1500;
             myFirstCar.Gears = 6;
             myFirstCar.EngineOn = true;
-            myFirstCar.TypeOfEngine = Car.EngineType.Gasoline;
+            myFirstCar.TypeOfEngine = Engine.EngineType.Gasoline;
             myFirstCar.MaxSpeed = 320;
 
             // Andra bilen
@@ -24,7 +24,7 @@
             mySecondCar.HorsePower = 600;
             mySecondCar.Gears = 5;
             mySecondCar.EngineOn = true;
-            mySecondCar.TypeOfEngine = Car.EngineType.Diesel;
+            mySecondCar.TypeOfEngine = Engine.EngineType.Diesel;
             mySecondCar.MaxSpeed = 280;
 
             // Kalla på metoder
@@ -33,6 +33,12 @@
 
             mySecondCar.ShowInfo();
             mySecondCar.Drive();
+
+            myFirstCar.Fuel();
+            mySecondCar.Fuel();
+
+            Console.WriteLine();
+            myFirstCar.IsFasterThan(mySecondCar);
         }
     }
 }

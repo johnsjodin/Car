@@ -33,5 +33,10 @@
             Diesel,
             Hybrid
         }
+
+        public void Fuel()
+        {
+            Console.WriteLine($"Bilen har en motor av typen {TypeOfEngine}.");
+        }
     }
 }
